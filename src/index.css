@@ -11,3 +11,160 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.container{
+  background-color: #619e9e;
+  height: 1450px;
+  
+}
+
+.textTareaContainer{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 30px;
+  
+}
+
+.barTextarea{
+  display: grid;
+  grid-template-columns: 1fr 13fr 1fr;
+  align-items: center;
+  padding-bottom: 10px;
+  width: 598px;
+  height: 40px;
+  border: 1px solid #1d2f2f;
+  box-shadow: 1px 1px 10px 2px #3a5f5f;
+}
+
+.iconFreeCodeCamp{
+  padding-left: 10px;
+}
+
+.editor{
+  width: 594px;
+  height: 235px;
+  background-color: #c0d8d8;
+  border: 1px solid #1d2f2f;
+  box-shadow: 1px 1px 10px 2px #3a5f5f;
+  border-top: none;
+}
+
+.containerPreview{
+  max-width: 900px;
+  margin: 1.25rem auto;
+  min-height: 1000px;
+  background-color: #c0d8d8;
+  border: 1px solid #1d2f2f;
+  box-shadow: 1px 1px 10px 2px #3a5f5f;
+  border-top: none;
+  
+}
+
+.barBox{
+  display: grid;
+  grid-template-columns: 1fr 19fr 1fr;
+  align-items: center;
+  padding-bottom: 10px;
+  width: 900px;
+  height: 40px;
+  border: 1px solid #1d2f2f;
+  box-shadow: 1px 1px 10px 2px #3a5f5f;
+  background-color: #619e9e;
+}
+
+.pBar{
+  font-weight: bold;
+}
+
+.box{
+  padding: 20px;
+}
+
+.preview{
+  display: block;
+  overflow: auto;
+  background-color: white;
+  padding: 5px;
+  line-height: 1.2;
+  width: 99%;
+  height: 145px;
+}
+
+h1{
+  border-bottom: 4px solid #224b4b;
+  font-weight: bold;
+  font-size: 35px;
+}
+
+h2{
+  border-bottom: 2px solid #224b4b;
+  font-weight: bold;
+  font-size: 25px;
+}
+
+code{
+  background: white;
+}
+
+blockquote{
+  border-left: 3px solid #224b4b;
+  color: #224b4b;
+  padding-left: 5px;
+  margin-left: 25px;
+}
+
+.containerTablet{
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #224b4b;
+  width: 480px;
+}
+
+.containerTitle, .row1, .row2{
+  display: flex;
+  
+}
+
+.title, .element-Row-1, .element-Row-2{
+  width: 150px;
+  height: 30px;
+  border: 1px solid #224b4b;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.element-ul-li-2{
+  margin-left: 30px;
+}
+
+.element-ul-li-3{
+  margin-left: 60px;
+}
+
+.element-ul-li-4{
+  margin-left: 90px;
+}
+
+.containerImg{
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+img{
+  width: 90%;
+}
+
+.maxEditor{
+  height: 600px;
+}
+
+.minContainer{
+  height: 760px;
+}
+
+.minPreview{
+  
+}
