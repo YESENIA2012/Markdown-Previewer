@@ -1,55 +1,17 @@
 import React from 'react';
+import placeholder from './editor-placeholder';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFreeCodeCamp } from '@fortawesome/free-brands-svg-icons';
 import { faMaximize } from '@fortawesome/free-solid-svg-icons';
-
-const placeholder = `# Welcome to my React Markdown Previewer!
-
-## This is a sub-heading...
-### And here's some other cool stuff:
-
-Heres some code, \`<div></div>\`, between 2 backticks.
-
-\`\`\`
-// this is multi-line code:
-
-function anotherExample(firstLine, lastLine) {
-  if (firstLine == '\`\`\`' && lastLine == '\`\`\`') {
-    return multiLineCode;
-  }
-}
-\`\`\`
-
-You can also make text **bold**... whoa!
-Or _italic_.
-Or... wait for it... **_both!_**
-And feel free to go crazy ~~crossing stuff out~~.
-
-There's also [links](https://www.freecodecamp.org), and
-> Block Quotes!
-
-And if you want to get really crazy, even tables:
-
-Wild Header | Crazy Header | Another Header?
------------- | ------------- | -------------
-Your content can | be here, and it | can be here....
-And here. | Okay. | I think we get it.
-
-- And of course there are lists.
-  - Some are bulleted.
-     - With different indentation levels.
-        - That look like this.
-
-
-1. And there are numbered lists too.
-1. Use just 1s if you want!
-1. And last but not least, let's not forget embedded images:
-
-![freeCodeCamp Logo](https://cdn.freecodecamp.org/testable-projects-fcc/images/fcc_secondary.svg)
-`;
+import { faDownLeftAndUpRightToCenter } from '@fortawesome/free-solid-svg-icons';
 
 const styleOne = {
   display: 'none',
+  height: 760,
+};
+
+const styleTwo = {
+  height: 600,
 };
 
 class Editor extends React.Component {
@@ -72,48 +34,42 @@ class Editor extends React.Component {
   }
 
   handleEditorClick() {
+    console.log(this.state.editorElementmaximized);
     this.setState({
       editorElementmaximized: !this.state.editorElementmaximized,
     });
-    console.log(this.state.editorElementmaximized);
   }
 
   handlePreviewClick() {
-    console.log('paola');
+    console.log('Yesenia');
     this.setState({
       previewElementMaximized: !this.state.previewElementMaximized,
     });
   }
 
-  componentDidMount() {
-    document
-      .querySelector('.iconArrow1')
-      .addEventListener('click', this.handleEditorClick);
-    document
-      .querySelector('.iconArrow2')
-      .addEventListener('click', this.handlePreviewClick);
-  }
-
   render() {
-    if (this.state.editorElementmaximized == true) {
-      document.querySelector('.container').classList.add('minContainer');
-      document.querySelector('.editor').classList.add('maxEditor');
-      document.querySelector('.containerPreview').style.display =
-        styleOne.display;
-    } else if (this.state.previewElementMaximized == true) {
-      document.querySelector('.editor').style.display = styleOne.display;
-    }
+    const heightContainer = styleOne.height;
+    const heightEditor = styleTwo.height;
+    const displayNone = styleOne.display;
 
     return (
       <div className="container">
-        <div className="textTareaContainer">
-          <div className="barTextarea">
+        <div className="textarea-container">
+          <div className="bar-textarea">
             <FontAwesomeIcon
-              className="iconFreeCodeCamp"
+              className="icon-free-code-camp"
               icon={faFreeCodeCamp}
             />
-            <p className="pBar">Editor</p>
-            <FontAwesomeIcon className="iconArrow1" icon={faMaximize} />
+            <p className="text-bar">Editor</p>
+            <FontAwesomeIcon
+              className="icon-arrow1"
+              icon={faMaximize}
+              onClick={this.handleEditorClick}
+            />
+            <FontAwesomeIcon
+              icon={faDownLeftAndUpRightToCenter}
+              className="icon-two-arrow"
+            />
           </div>
           <textarea
             className="editor"
@@ -133,11 +89,18 @@ class Contentwindow extends React.Component {
   }
   render() {
     return (
-      <section className="containerPreview">
-        <div className="barBox">
-          <FontAwesomeIcon className="iconFreeCodeCamp" icon={faFreeCodeCamp} />
-          <p className="pBar">Previewer</p>
-          <FontAwesomeIcon className="iconArrow2" icon={faMaximize} />
+      <section className="container-preview">
+        <div className="bar-box">
+          <FontAwesomeIcon
+            className="icon-free-code-camp"
+            icon={faFreeCodeCamp}
+          />
+          <p className="text-bar">Previewer</p>
+          <FontAwesomeIcon
+            className="icon-arrow2"
+            icon={faMaximize}
+            onClick={this.props.handlePreviewClick}
+          />
         </div>
         <div className="box">
           <h1>Welcome to my React Markdown Previewer!</h1>
@@ -162,7 +125,7 @@ class Contentwindow extends React.Component {
           </p>
           <p>
             There's also{' '}
-            <a target="_blank" href="https://www.freecodecamp.org">
+            <a target={'_blank'} href="https://www.freecodecamp.org">
               links
             </a>
             , and
@@ -171,21 +134,21 @@ class Contentwindow extends React.Component {
             <p>Block Quotes!</p>
           </blockquote>
           <p>And if you want to get really crazy, even tables:</p>
-          <div className="containerTablet">
-            <div className="containerTitle">
-              <div className="title">Wild Header</div>
-              <div className="title">Crazy Header</div>
-              <div className="title">Another Header?</div>
+          <div className="container-tablet">
+            <div className="row-1">
+              <div className="element-row-1">Wild Header</div>
+              <div className="element-row-1">Crazy Header</div>
+              <div className="element-row-1">Another Header?</div>
             </div>
-            <div className="row1">
-              <div className="element-Row-1">Your content can</div>
-              <div className="element-Row-1">be here, and it</div>
-              <div className="element-Row-1">can be here...</div>
+            <div className="row-2">
+              <div className="element-row-2">Your content can</div>
+              <div className="element-row-2">be here, and it</div>
+              <div className="element-row-2">can be here...</div>
             </div>
-            <div className="row2">
-              <div className="element-Row-2">And here.</div>
-              <div className="element-Row-2">Okay.</div>
-              <div className="element-Row-2">I think we get it.</div>
+            <div className="row-3">
+              <div className="element-row-3">And here.</div>
+              <div className="element-row-3">Okay.</div>
+              <div className="element-row-3">I think we get it.</div>
             </div>
           </div>
         </div>
@@ -200,7 +163,7 @@ class Contentwindow extends React.Component {
           <li>Use just 1s if you want</li>
           <li>And last but least, let's not forget embedded images:</li>
         </ol>
-        <p className="containerImg">
+        <p className="container-img">
           <img
             src="https://cdn.freecodecamp.org/testable-projects-fcc/images/fcc_secondary.svg"
             alt="freeCodeCamp Logo"
