@@ -34,52 +34,89 @@ class Editor extends React.Component {
   }
 
   handleEditorClick() {
-    console.log(this.state.editorElementmaximized);
     this.setState({
       editorElementmaximized: !this.state.editorElementmaximized,
     });
   }
 
   handlePreviewClick() {
-    console.log('Yesenia');
+    console.log('Le doy click a la función del componente hijo');
     this.setState({
       previewElementMaximized: !this.state.previewElementMaximized,
     });
   }
 
   render() {
-    const heightContainer = styleOne.height;
-    const heightEditor = styleTwo.height;
-    const displayNone = styleOne.display;
+    if (this.state.editorElementmaximized === true) {
+      const heightContainer = { height: styleOne.height };
+      const heightEditor = { height: styleTwo.height };
+      const displayNone = { display: styleOne.display };
 
-    return (
-      <div className="container">
-        <div className="textarea-container">
-          <div className="bar-textarea">
-            <FontAwesomeIcon
-              className="icon-free-code-camp"
-              icon={faFreeCodeCamp}
-            />
-            <p className="text-bar">Editor</p>
-            <FontAwesomeIcon
-              className="icon-arrow1"
-              icon={faMaximize}
-              onClick={this.handleEditorClick}
-            />
-            <FontAwesomeIcon
-              icon={faDownLeftAndUpRightToCenter}
-              className="icon-two-arrow"
-            />
+      return (
+        <div className="container" style={heightContainer}>
+          <div className="textarea-container">
+            <div className="bar-textarea">
+              <FontAwesomeIcon
+                className="icon-free-code-camp"
+                icon={faFreeCodeCamp}
+              />
+              <p className="text-bar">Editor</p>
+              <FontAwesomeIcon
+                className="icon-arrow1"
+                icon={faMaximize}
+                onClick={this.handleEditorClick}
+                style={displayNone}
+              />
+              <FontAwesomeIcon
+                icon={faDownLeftAndUpRightToCenter}
+                className="icon-two-arrow"
+                onClick={this.handleEditorClick}
+              />
+            </div>
+            <textarea
+              className="editor"
+              defaultValue={this.state.textarea}
+              onChange={this.handleChange}
+              style={heightEditor}
+            ></textarea>
           </div>
-          <textarea
-            className="editor"
-            defaultValue={this.state.textarea}
-            onChange={this.handleChange}
-          ></textarea>
+          <Contentwindow textarea={this.state.textarea} />
         </div>
-        <Contentwindow textarea={this.state.textarea} />
-      </div>
-    );
+      );
+    } else {
+      return (
+        <div className="container">
+          <div className="textarea-container">
+            <div className="bar-textarea">
+              <FontAwesomeIcon
+                className="icon-free-code-camp"
+                icon={faFreeCodeCamp}
+              />
+              <p className="text-bar">Editor</p>
+              <FontAwesomeIcon
+                className="icon-arrow1"
+                icon={faMaximize}
+                onClick={this.handleEditorClick}
+              />
+              <FontAwesomeIcon
+                icon={faDownLeftAndUpRightToCenter}
+                className="icon-two-arrow"
+              />
+            </div>
+            <textarea
+              className="editor"
+              defaultValue={this.state.textarea}
+              onChange={this.handleChange}
+            ></textarea>
+          </div>
+          <Contentwindow
+            textarea={this.state.textarea}
+            previewElementMaximized={this.state.previewElementMaximized}
+            handlePreviewClick={this.handlePreviewClick}
+          />
+        </div>
+      );
+    }
   }
 }
 
@@ -87,6 +124,7 @@ class Contentwindow extends React.Component {
   constructor(props) {
     super(props);
   }
+
   render() {
     return (
       <section className="container-preview">
@@ -100,6 +138,10 @@ class Contentwindow extends React.Component {
             className="icon-arrow2"
             icon={faMaximize}
             onClick={this.props.handlePreviewClick}
+          />
+          <FontAwesomeIcon
+            icon={faDownLeftAndUpRightToCenter}
+            className="icon-two-arrow"
           />
         </div>
         <div className="box">
