@@ -15,19 +15,17 @@ code {
 .container{
   background-color: #619e9e;
   height: 1450px;
-  
 }
 
-.textTareaContainer{
+.textarea-container{
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   padding-top: 30px;
-  
 }
 
-.barTextarea{
+.bar-textarea{
   display: grid;
   grid-template-columns: 1fr 13fr 1fr;
   align-items: center;
@@ -38,7 +36,7 @@ code {
   box-shadow: 1px 1px 10px 2px #3a5f5f;
 }
 
-.iconFreeCodeCamp{
+.icon-free-code-camp{
   padding-left: 10px;
 }
 
@@ -51,18 +49,17 @@ code {
   border-top: none;
 }
 
-.containerPreview{
+.container-preview{
   max-width: 900px;
   margin: 1.25rem auto;
   min-height: 1000px;
   background-color: #c0d8d8;
   border: 1px solid #1d2f2f;
   box-shadow: 1px 1px 10px 2px #3a5f5f;
-  border-top: none;
-  
+  border-top: none;  
 }
 
-.barBox{
+.bar-box{
   display: grid;
   grid-template-columns: 1fr 19fr 1fr;
   align-items: center;
@@ -74,7 +71,7 @@ code {
   background-color: #619e9e;
 }
 
-.pBar{
+.text-bar{
   font-weight: bold;
 }
 
@@ -115,19 +112,18 @@ blockquote{
   margin-left: 25px;
 }
 
-.containerTablet{
+.container-tablet{
   display: flex;
   flex-direction: column;
   border: 1px solid #224b4b;
   width: 480px;
 }
 
-.containerTitle, .row1, .row2{
-  display: flex;
-  
+.row-1, .row-2, .row-3{
+  display: flex;  
 }
 
-.title, .element-Row-1, .element-Row-2{
+.element-row-1, .element-row-2, .element-row-3{
   width: 150px;
   height: 30px;
   border: 1px solid #224b4b;
@@ -147,7 +143,7 @@ blockquote{
   margin-left: 90px;
 }
 
-.containerImg{
+.container-img{
   display: flex;
   justify-content: center;
   margin-top: 30px;
@@ -163,8 +159,4 @@ img{
 
 .minContainer{
   height: 760px;
-}
-
-.minPreview{
-  
 }
