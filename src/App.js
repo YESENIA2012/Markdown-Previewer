@@ -1,8 +1,8 @@
 import './App.css';
-import Editor from './body';
+import ContainerPage from './body';
 
 function App() {
-  return <Editor />;
+  return <ContainerPage />;
 }
 
 export default App;
