@@ -14,7 +14,6 @@ code {
 
 .container{
   background-color: #619e9e;
-  height: 1450px;
 }
 
 .textarea-container{
@@ -51,8 +50,7 @@ code {
 
 .container-preview{
   max-width: 900px;
-  margin: 1.25rem auto;
-  min-height: 1000px;
+  margin: 0 auto;
   background-color: #c0d8d8;
   border: 1px solid #1d2f2f;
   box-shadow: 1px 1px 10px 2px #3a5f5f;
@@ -64,10 +62,10 @@ code {
   grid-template-columns: 1fr 19fr 1fr;
   align-items: center;
   padding-bottom: 10px;
-  width: 900px;
+  width: 100%;
   height: 40px;
   border: 1px solid #1d2f2f;
-  box-shadow: 1px 1px 10px 2px #3a5f5f;
+  box-shadow: 1px 0 10px 0 #3a5f5f;
   background-color: #619e9e;
 }
 
