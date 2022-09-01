@@ -41,6 +41,14 @@ code {
   padding-left: 10px;
 }
 
+.icon-arrow:hover{
+  cursor: pointer;
+}
+
+.icon-two-arrow:hover{
+  cursor: pointer;
+}
+
 .editor{
   width: 594px;
   height: 235px;
