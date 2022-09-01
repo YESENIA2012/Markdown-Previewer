@@ -4,14 +4,9 @@ import placeholder from './editor-placeholder';
 import TexttareaContainer from './editor';
 import ContainerPreview from './preview';
 
-/* const styleOne = {
-  display: 'none',
-  height: 760,
+const style = {
+  paddingTop: 20,
 };
-
-const styleTwo = {
-  height: 600,
-}; */
 
 class ContainerPage extends React.Component {
   constructor(props) {
@@ -33,25 +28,18 @@ class ContainerPage extends React.Component {
   }
 
   handleEditorClick() {
-    console.log('esta agarrando el handleEditorClick ');
     this.setState({
       editorElementmaximized: !this.state.editorElementmaximized,
     });
   }
 
   handlePreviewClick() {
-    console.log('Le doy click a la función del componente hijo');
     this.setState({
       previewElementMaximized: !this.state.previewElementMaximized,
     });
   }
 
   render() {
-    /* 
-    const heightContainer = { height: styleOne.height };
-    const heightEditor = { height: styleTwo.height };
-    const displayNone = { display: styleOne.display }; */
-
     const texttareaContainer = (
       <TexttareaContainer
         textarea={this.state.textarea}
@@ -82,7 +70,11 @@ class ContainerPage extends React.Component {
     } else if (this.state.editorElementmaximized == true) {
       return <div className="container">{texttareaContainer}</div>;
     } else if (this.state.previewElementMaximized == true) {
-      return <div className="container">{containerPreview}</div>;
+      return (
+        <div className="container" style={style}>
+          {containerPreview}
+        </div>
+      );
     }
   }
 }
