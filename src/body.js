@@ -45,7 +45,7 @@ class ContainerPage extends React.Component {
         textarea={this.state.textarea}
         editorElementmaximized={this.state.editorElementmaximized}
         handleEditorClick={this.handleEditorClick}
-        onChange={this.handleChange}
+        handleChange={this.handleChange}
       />
     );
 
