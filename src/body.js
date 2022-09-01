@@ -1,7 +1,7 @@
 import React from 'react';
 
 import placeholder from './editor-placeholder';
-import TexttareaContainer from './editor';
+import TextAreaContainer from './editor';
 import ContainerPreview from './preview';
 
 const style = {
@@ -13,7 +13,7 @@ class ContainerPage extends React.Component {
     super(props);
     this.state = {
       textarea: placeholder,
-      editorElementmaximized: false,
+      editorElementMaximized: false,
       previewElementMaximized: false,
     };
     this.handleChange = this.handleChange.bind(this);
@@ -29,7 +29,7 @@ class ContainerPage extends React.Component {
 
   handleEditorClick() {
     this.setState({
-      editorElementmaximized: !this.state.editorElementmaximized,
+      editorElementMaximized: !this.state.editorElementMaximized,
     });
   }
 
@@ -40,10 +40,13 @@ class ContainerPage extends React.Component {
   }
 
   render() {
-    const texttareaContainer = (
-      <TexttareaContainer
-        textarea={this.state.textarea}
-        editorElementmaximized={this.state.editorElementmaximized}
+    const { textarea, editorElementMaximized, previewElementMaximized } =
+      this.state;
+
+    const textAreaContainer = (
+      <TextAreaContainer
+        textarea={textarea}
+        editorElementMaximized={editorElementMaximized}
         handleEditorClick={this.handleEditorClick}
         handleChange={this.handleChange}
       />
@@ -51,25 +54,22 @@ class ContainerPage extends React.Component {
 
     const containerPreview = (
       <ContainerPreview
-        textarea={this.state.textarea}
-        previewElementMaximized={this.state.previewElementMaximized}
+        textarea={textarea}
+        previewElementMaximized={previewElementMaximized}
         handlePreviewClick={this.handlePreviewClick}
       />
     );
 
-    if (
-      this.state.editorElementmaximized == false &&
-      this.state.previewElementMaximized == false
-    ) {
+    if (editorElementMaximized == false && previewElementMaximized == false) {
       return (
         <div className="container">
-          {texttareaContainer}
+          {textAreaContainer}
           {containerPreview}
         </div>
       );
-    } else if (this.state.editorElementmaximized == true) {
-      return <div className="container">{texttareaContainer}</div>;
-    } else if (this.state.previewElementMaximized == true) {
+    } else if (editorElementMaximized == true) {
+      return <div className="container">{textAreaContainer}</div>;
+    } else if (previewElementMaximized == true) {
       return (
         <div className="container" style={style}>
           {containerPreview}

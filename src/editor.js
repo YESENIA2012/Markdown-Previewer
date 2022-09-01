@@ -3,59 +3,55 @@ import { faFreeCodeCamp } from '@fortawesome/free-brands-svg-icons';
 import { faMaximize } from '@fortawesome/free-solid-svg-icons';
 import { faDownLeftAndUpRightToCenter } from '@fortawesome/free-solid-svg-icons';
 
-const style = {
-  height: 650,
-};
+let heightTextareaElement = {};
+let openIconStyles = {};
+let closeIconStyles = {};
 
-const TexttareaContainer = (props) => {
-  const { textarea, editorElementmaximized, handleChange, handleEditorClick } =
+const TextAreaContainer = (props) => {
+  const { textarea, editorElementMaximized, handleChange, handleEditorClick } =
     props;
-  if (editorElementmaximized == false) {
-    return (
-      <div className="textarea-container">
-        <div className="bar-textarea">
-          <FontAwesomeIcon
-            className="icon-free-code-camp"
-            icon={faFreeCodeCamp}
-          />
-          <p className="text-bar">Editor</p>
-          <FontAwesomeIcon
-            className="icon-arrow"
-            icon={faMaximize}
-            onClick={handleEditorClick}
-          />
-        </div>
-        <textarea
-          className="editor"
-          defaultValue={textarea}
-          onChange={handleChange}
-        ></textarea>
-      </div>
-    );
+
+  if (editorElementMaximized) {
+    heightTextareaElement = {
+      height: 650,
+    };
+    openIconStyles = { display: 'none' };
+    closeIconStyles = { display: 'inline' };
   } else {
-    return (
-      <div className="textarea-container">
-        <div className="bar-textarea">
-          <FontAwesomeIcon
-            className="icon-free-code-camp"
-            icon={faFreeCodeCamp}
-          />
-          <p className="text-bar">Editor</p>
-          <FontAwesomeIcon
-            icon={faDownLeftAndUpRightToCenter}
-            className="icon-two-arrow"
-            onClick={handleEditorClick}
-          />
-        </div>
-        <textarea
-          className="editor"
-          defaultValue={textarea}
-          onChange={handleChange}
-          style={style}
-        ></textarea>
-      </div>
-    );
+    heightTextareaElement = {};
+    openIconStyles = {};
+    closeIconStyles = { display: 'none' };
   }
+
+  return (
+    <div className="textarea-container">
+      <div className="bar-textarea">
+        <FontAwesomeIcon
+          className="icon-free-code-camp"
+          icon={faFreeCodeCamp}
+        />
+        <p className="text-bar">Editor</p>
+        <FontAwesomeIcon
+          className="open-icon"
+          style={openIconStyles}
+          icon={faMaximize}
+          onClick={handleEditorClick}
+        />
+        <FontAwesomeIcon
+          className="closed-icon"
+          style={closeIconStyles}
+          icon={faDownLeftAndUpRightToCenter}
+          onClick={handleEditorClick}
+        />
+      </div>
+      <textarea
+        className="editor"
+        style={heightTextareaElement}
+        defaultValue={textarea}
+        onChange={handleChange}
+      ></textarea>
+    </div>
+  );
 };
 
-export default TexttareaContainer;
+export default TextAreaContainer;

@@ -41,11 +41,11 @@ code {
   padding-left: 10px;
 }
 
-.icon-arrow:hover{
+.open-icon:hover{
   cursor: pointer;
 }
 
-.icon-two-arrow:hover{
+.closed-icon:hover{
   cursor: pointer;
 }
 
