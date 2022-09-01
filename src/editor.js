@@ -20,13 +20,9 @@ const TexttareaContainer = (props) => {
           />
           <p className="text-bar">Editor</p>
           <FontAwesomeIcon
-            className="icon-arrow1"
+            className="icon-arrow"
             icon={faMaximize}
             onClick={handleEditorClick}
-          />
-          <FontAwesomeIcon
-            icon={faDownLeftAndUpRightToCenter}
-            className="icon-two-arrow"
           />
         </div>
         <textarea

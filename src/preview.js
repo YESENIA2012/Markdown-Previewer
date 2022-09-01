@@ -16,7 +16,7 @@ const ContainerPreview = (props) => {
           />
           <p className="text-bar">Previewer</p>
           <FontAwesomeIcon
-            className="icon-arrow2"
+            className="icon-arrow"
             icon={faMaximize}
             onClick={handlePreviewClick}
           />
@@ -101,11 +101,6 @@ const ContainerPreview = (props) => {
             icon={faFreeCodeCamp}
           />
           <p className="text-bar">Previewer</p>
-          {/*  <FontAwesomeIcon
-            className="icon-arrow2"
-            icon={faMaximize}
-            onClick={handlePreviewClick}
-          /> */}
           <FontAwesomeIcon
             icon={faDownLeftAndUpRightToCenter}
             className="icon-two-arrow"
