@@ -60,16 +60,16 @@ class ContainerPage extends React.Component {
       />
     );
 
-    if (editorElementMaximized == false && previewElementMaximized == false) {
+    if (!editorElementMaximized && !previewElementMaximized) {
       return (
         <div className="container">
           {textAreaContainer}
           {containerPreview}
         </div>
       );
-    } else if (editorElementMaximized == true) {
+    } else if (editorElementMaximized) {
       return <div className="container">{textAreaContainer}</div>;
-    } else if (previewElementMaximized == true) {
+    } else if (previewElementMaximized) {
       return (
         <div className="container" style={style}>
           {containerPreview}
