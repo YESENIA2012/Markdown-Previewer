@@ -8,8 +8,12 @@ let openIconStyles = {};
 let closeIconStyles = {};
 
 const TextAreaContainer = (props) => {
-  const { textarea, editorElementMaximized, handleChange, handleEditorClick } =
-    props;
+  const {
+    textareaText,
+    editorElementMaximized,
+    handleChange,
+    handleEditorClick,
+  } = props;
 
   if (editorElementMaximized) {
     heightTextareaElement = {
@@ -47,7 +51,7 @@ const TextAreaContainer = (props) => {
       <textarea
         className="editor"
         style={heightTextareaElement}
-        defaultValue={textarea}
+        defaultValue={textareaText}
         onChange={handleChange}
       ></textarea>
     </div>
