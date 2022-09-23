@@ -12,7 +12,7 @@ class ContainerPage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      textarea: placeholder,
+      textareaText: placeholder,
       editorElementMaximized: false,
       previewElementMaximized: false,
     };
@@ -23,7 +23,7 @@ class ContainerPage extends React.Component {
 
   handleChange(event) {
     this.setState({
-      textarea: event.target.value,
+      textareaText: event.target.value,
     });
   }
 
@@ -40,12 +40,12 @@ class ContainerPage extends React.Component {
   }
 
   render() {
-    const { textarea, editorElementMaximized, previewElementMaximized } =
+    const { textareaText, editorElementMaximized, previewElementMaximized } =
       this.state;
 
     const textAreaContainer = (
       <TextAreaContainer
-        textarea={textarea}
+        textareaText={textareaText}
         editorElementMaximized={editorElementMaximized}
         handleEditorClick={this.handleEditorClick}
         handleChange={this.handleChange}
@@ -54,7 +54,7 @@ class ContainerPage extends React.Component {
 
     const containerPreview = (
       <ContainerPreview
-        textarea={textarea}
+        textareaText={textareaText}
         previewElementMaximized={previewElementMaximized}
         handlePreviewClick={this.handlePreviewClick}
       />
